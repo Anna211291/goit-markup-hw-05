@@ -16,7 +16,7 @@ html {
   --color-light-slate: #8e8f99;
   --color-cornflower: #e7e9fc;
   --color-cloud: #f4f4fd;
-  --color-navy-blue-modal: rgba(46, 47, 66, 0.5);
+  --color-navy-blue-modal: rgba(46, 47, 66, 0.4);
   --color-grey: #2e2f42;
   --color-white: #ffffff;
   --color-dairy: #fcfcfc;
@@ -151,6 +151,8 @@ button {
   padding: 24px 0;
   position: relative;
   display: block;
+}
+.nav-item {
   transition: color var(--anim-fast);
 }
 .nav-menu:hover,
@@ -162,10 +164,11 @@ button {
   display: block;
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
+  transition: var(--anim-fast);
 }
 .nav-menu.active::after {
   background-color: var(--color-ocean);
@@ -179,6 +182,8 @@ button {
 }
 .contacts-link {
   color: var(--main-color-slate);
+}
+.contacts-item {
   transition: color var(--anim-fast);
 }
 .contacts-link:hover,
@@ -314,11 +319,14 @@ button {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--color-iris);
+}
+.social-item {
   transition: background-color var(--anim-fast);
 }
 .social-icon {
   fill: var(--color-cloud);
 }
+
 .social-link:hover,
 .social-link:focus {
   background-color: var(--color-ocean);
@@ -345,9 +353,10 @@ button {
   border: 1px solid var(--color-light-slate);
   border-radius: 4px;
   color: var(--color-light-slate);
-  transition: color var(--anim-fast);
 }
-
+.customers-item {
+  transition: color var(--anim-fast), border-color var(--anim-fast);
+}
 .customers-icon {
   fill: currentColor;
 }
@@ -382,8 +391,10 @@ button {
   padding: 12px 24px;
   border: 1px solid var(--color-cornflower);
   border-radius: 4px;
+}
+.btn-item {
   transition: background-color var(--anim-fast), box-shadow var(--anim-fast),
-    color var(--anim-fast);
+    color var(--anim-fast), border-color var(--anim-fast);
 }
 .btn:hover,
 .btn:focus {
@@ -410,6 +421,7 @@ button {
   background: var(--color-white);
   flex-basis: calc((100% - var(--indent) * (var(--items) -1)) / var(--items));
   width: 360px;
+  transition: box-shadow var(--anim-fast);
 }
 
 .portfolio-list {
@@ -422,12 +434,12 @@ button {
 }
 .link-item-portfolio {
   display: block;
-  transition: box-shadow var(--anim-fast);
 }
 .link-item-portfolio:hover,
 .link-item-portfolio:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
 }
 .portfolio-thumb {
   position: relative;
@@ -452,6 +464,14 @@ button {
   padding: 40px 32px;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  background-color: var(--color-iris);
+  transform: translateY(100%);
+  transition: transform var(--anim-fast);
 }
 /* Footer section styles */
 .footer-section {
@@ -510,6 +530,8 @@ button {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--color-iris);
+}
+.social-item-footer {
   transition: background-color var(--anim-fast);
 }
 .footer-icon {
@@ -541,7 +563,7 @@ button {
 }
 .modal {
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   position: absolute;
   top: calc(50%);
   left: calc(50%);
@@ -550,6 +572,7 @@ button {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--anim-fast);
   transition-delay: 250ms;
 }
 .backdrop.is-hidden .modal {
@@ -573,8 +596,15 @@ button {
   justify-content: center;
 
   padding: 0;
-  transition: opacity 400ms ease-in, transform 400ms ease-in;
+  transition: background-color var(--anim-fast), border var(--anim-fast);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--color-ocean);
+  border: none;
+  fill: var(--color-white);
 }
 .modal-close-icon {
   fill: var(--color-navy-blue);
+  transition: fill var(--anim-fast);
 }
