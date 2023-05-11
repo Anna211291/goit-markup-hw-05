@@ -445,7 +445,7 @@ button {
 }
 /* Overlay */
 
-.portfolio-card:hover .overlay-text,
+.portfolio-card:hover,
 .portfolio-card:focus .overlay-text {
   transform: translateY(0);
 }
