@@ -446,7 +446,8 @@ button {
 }
 /* Overlay */
 
-.portfolio-card:hover .overlay-text {
+.portfolio-card:hover .overlay-text,
+.portfolio-card:focus .overlay-text {
   transform: translateY(0);
 }
 .overlay-text {
@@ -559,7 +560,6 @@ button {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 .backdrop.is-hidden .modal {
   opacity: 0;
