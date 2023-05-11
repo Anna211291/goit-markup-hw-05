@@ -444,13 +444,11 @@ button {
   overflow: hidden;
 }
 /* Overlay */
+.link-item-portfolio:hover .overlay-text,
+.link-item-portfolio:focus .overlay-text {
+  transform: translateY(0);
+}
 
-.portfolio-card:hover .overlay-text {
-  transform: translateY(0);
-}
-.portfolio-card:focus .overlay-text {
-  transform: translateY(0);
-}
 .overlay-text {
   background-color: var(--color-iris);
   color: var(--color-cloud);
