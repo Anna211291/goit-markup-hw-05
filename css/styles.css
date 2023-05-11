@@ -459,7 +459,7 @@ button {
   top: 0;
   background-color: var(--color-iris);
   transform: translateY(100%);
-  transition: transform var(--anim-fast);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Footer section styles */
 .footer-section {
